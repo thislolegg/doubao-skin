@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+
+# 运行时日志（apply/cdp worker 写到 /tmp，仓库内不应出现）
+*.log
+
+# 本地 IDE / agent 工作区配置，不随公开仓库分发
+.trae/
+._agent/

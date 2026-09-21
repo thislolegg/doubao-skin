@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "dunhuang-feitian",
+  "name": "敦煌飞天",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#b3763f",
+    "secondary": "#5f8a7e",
+    "surface": "#f3ece0",
+    "text": "#0f172a"
+  }
+}

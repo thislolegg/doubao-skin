@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "jade-rabbit",
+  "name": "玉兔捣药",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#c8a24a",
+    "secondary": "#8fa9bd",
+    "surface": "#eef2f5",
+    "text": "#243440"
+  }
+}

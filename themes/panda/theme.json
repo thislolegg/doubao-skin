@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "panda",
+  "name": "国宝熊猫",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#5f7d55",
+    "secondary": "#77786f",
+    "surface": "#f2f5ee",
+    "text": "#0f172a"
+  }
+}

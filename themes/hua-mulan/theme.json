@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "hua-mulan",
+  "name": "花木兰",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#a6603c",
+    "secondary": "#8c99a8",
+    "surface": "#16141b",
+    "text": "#f8fafc"
+  }
+}

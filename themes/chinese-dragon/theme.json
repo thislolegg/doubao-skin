@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "chinese-dragon",
+  "name": "中国龙",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#4f8793",
+    "secondary": "#c39a4a",
+    "surface": "#12181e",
+    "text": "#f8fafc"
+  }
+}

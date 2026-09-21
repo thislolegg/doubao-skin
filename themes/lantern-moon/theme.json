@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "lantern-moon",
+  "name": "花前月下",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#e6923c",
+    "secondary": "#d8b45a",
+    "surface": "#121b2e",
+    "text": "#f4f1ea"
+  }
+}

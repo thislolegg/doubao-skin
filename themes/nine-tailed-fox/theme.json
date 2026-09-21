@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "nine-tailed-fox",
+  "name": "九尾狐",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#7f989b",
+    "secondary": "#b39567",
+    "surface": "#f1f4f3",
+    "text": "#0f172a"
+  }
+}

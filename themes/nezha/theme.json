@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "nezha",
+  "name": "哪吒",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#c1452f",
+    "secondary": "#cf9c47",
+    "surface": "#eef2f5",
+    "text": "#0f172a"
+  }
+}

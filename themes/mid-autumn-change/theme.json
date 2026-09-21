@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "mid-autumn-change",
+  "name": "嫦娥玉桂",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#d9b45a",
+    "secondary": "#c0462b",
+    "surface": "#16302f",
+    "text": "#f6f3e8"
+  }
+}

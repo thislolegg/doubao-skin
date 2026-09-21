@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "koi-fish",
+  "name": "锦鲤",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#c88a3c",
+    "secondary": "#4f8793",
+    "surface": "#101c22",
+    "text": "#f8fafc"
+  }
+}

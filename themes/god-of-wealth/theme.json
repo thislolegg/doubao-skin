@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "god-of-wealth",
+  "name": "财神到",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#c0462b",
+    "secondary": "#d48574",
+    "surface": "#21161a",
+    "text": "#f8fafc"
+  }
+}

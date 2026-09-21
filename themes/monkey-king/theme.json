@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "monkey-king",
+  "name": "齐天大圣",
+  "hero": "hero.webp",
+  "colors": {
+    "accent": "#b1793a",
+    "secondary": "#b2504a",
+    "surface": "#f6f1e8",
+    "text": "#0f172a"
+  }
+}
