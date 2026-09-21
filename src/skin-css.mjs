@@ -279,6 +279,11 @@ div[class*=h-header-height] button[aria-label="打开侧边工作台"]:hover {
   background: color-mix(in srgb, var(--db-surface) 86%, transparent) !important;
   backdrop-filter: blur(18px) saturate(1.08);
 }
+/* 右侧工作台「新标签页」的搜索框和快捷操作卡片都取 --s-color-bg-float。
+   豆包在 body 上把该变量重置为 #fff，需在稳定的工作台容器内重新接回主题浮层色。 */
+[data-testid=right-panel-container] {
+  --s-color-bg-float: color-mix(in srgb, var(--db-surface) 96%, transparent) !important;
+}
 
 /* 会话列表项透明，选中/悬停跟随强调色 */
 [data-testid=chat_list_thread_item] {
@@ -330,8 +335,13 @@ button[aria-label^="关闭"][aria-label*="自动播报"]:hover {
   background: color-mix(in srgb, var(--db-action-accent) 86%, #000000) !important;
 }
 
-/* 对话正文：豆包的 AI 回答用 [data-testid=message_text_content] 承载，颜色写死成黑色
-   （rgb(0,0,0)/.85/.5），不走 --md-box-* token，深色皮肤下整段看不清，强制跟随主题文字色 */
+/* 对话正文：豆包的 AI 回答用 [data-testid=message_text_content] 承载。正文中的
+   「知识库 / 文档」来源标签会读取 body 上被重置为黑色的 tertiary / trans token，
+   因此先在消息作用域接回主题色，再兜底处理写死的正文颜色。 */
+[data-testid=message_text_content] {
+  --s-color-text-tertiary: color-mix(in srgb, var(--db-text) 58%, transparent) !important;
+  --s-color-bg-trans: color-mix(in srgb, var(--db-text) 9%, transparent) !important;
+}
 [data-testid=message_text_content],
 [data-testid=message_text_content] * {
   color: var(--db-text) !important;
@@ -412,6 +422,30 @@ button[aria-label^="关闭"][aria-label*="自动播报"]:hover {
 [class*=table-header-] {
   background: color-mix(in srgb, var(--db-surface) 80%, transparent) !important;
   color: var(--db-text) !important;
+}
+
+/* HTML 图表右上角悬浮工具栏：原生白底搭配部分浅色图标，深色主题下除「查看代码」
+   外几乎不可见。工具栏、图表操作按钮和 Semi Tab 分别接管，保留明确选中态。 */
+[data-testid=message_text_content] [class*=tabbar-] {
+  background: color-mix(in srgb, var(--db-surface) 94%, transparent) !important;
+  border-color: color-mix(in srgb, var(--db-text) 14%, transparent) !important;
+  color: var(--db-text) !important;
+  backdrop-filter: blur(14px) saturate(1.06);
+}
+[data-testid=message_text_content] [class*=tabbar-] [data-testid^=diagram-],
+[data-testid=message_text_content] [class*=tabbar-] [role=tab] {
+  color: color-mix(in srgb, var(--db-text) 82%, transparent) !important;
+}
+[data-testid=message_text_content] [class*=tabbar-] [role=tab][aria-selected=true] {
+  color: var(--db-text) !important;
+  background: color-mix(in srgb, var(--db-accent) 20%, transparent) !important;
+}
+[data-testid=message_text_content] [class*=tabbar-] svg,
+[data-testid=message_text_content] [class*=tabbar-] svg * {
+  fill: currentColor !important;
+}
+[data-testid=message_text_content] [class*=tabbar-] [class*=divider-] {
+  background: color-mix(in srgb, var(--db-text) 16%, transparent) !important;
 }
 
 /* 新任务欢迎页的问候语「有什么我能帮你的吗？」用 ::after 做打字机遮罩，
@@ -632,22 +666,30 @@ button[aria-label^="关闭"][aria-label*="自动播报"]:hover {
   color: var(--db-text) !important;
 }
 
-/* ── 输入框 + / @ 呼出的「建议」面板（suggestionHost-）──
-   豆包工作版这里另起一套 CSS module（area- / groupLabel- / item- / divider- 前缀），
-   host 外层能被上面的浮层规则染成主题磨砂底，但内部铺满的 area- 层背景走
+/* ── 输入框 + / @ 呼出的「建议」面板 ──
+   新版用稳定属性 data-input-engine-suggestion-panel 标记 area- 根节点，旧版则在
+   suggestionHost-* 下渲染 area- / groupLabel- / item-*。内部铺满的 area- 层背景走
    --input-engine-suggestion-area-background → --input-guidance-input-container-background
    → --dbx-bg-float → #fff 的 fallback 链，前两个变量原生未定义，最终落到写死 #fff，
-   在 host 深底上盖出一整块白，加上文字已翻成浅色 → 白底浅字看不清。
-   直接在面板作用域内把这两个变量指向主题面板色，内层 area- / groupLabel- 置透明，
-   让 host 的主题磨砂底透出；列表项文字兜底跟随主题文字色。 */
+   加上文字已翻成浅色，就会出现白底浅字。直接在稳定属性节点上接管变量与背景；
+   旧版保留 suggestionHost-* 兜底。sticky 分组标题需使用同色实底，避免滚动时透字。 */
+[data-input-engine-suggestion-panel=true],
 [class*=suggestionHost-] {
   --input-engine-suggestion-area-background: color-mix(in srgb, var(--db-surface) 96%, transparent) !important;
   --input-guidance-input-container-background: color-mix(in srgb, var(--db-surface) 96%, transparent) !important;
+  background: color-mix(in srgb, var(--db-surface) 96%, transparent) !important;
+  color: var(--db-text) !important;
+}
+[data-input-engine-suggestion-panel=true] [data-suggestion-group-label=true] {
+  background: color-mix(in srgb, var(--db-surface) 96%, transparent) !important;
+  color: color-mix(in srgb, var(--db-text) 56%, transparent) !important;
 }
 [class*=suggestionHost-] [class*=area-],
 [class*=suggestionHost-] [class*=groupLabel-] {
   background: transparent !important;
 }
+[data-input-engine-suggestion-panel=true] [role=option],
+[data-input-engine-suggestion-panel=true] [role=option] *,
 [class*=suggestionHost-] [class*=item-],
 [class*=suggestionHost-] [class*=groupLabel-],
 [class*=suggestionHost-] [class*=standardItem-],

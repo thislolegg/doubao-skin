@@ -114,11 +114,11 @@ node src/cli.mjs doctor [--client personal|work]   # 检查客户端、路径和
 
 | 主题 id             | 名称     | 风格                 |
 | ------------------- | -------- | -------------------- |
-| `jade-rabbit`      | 玉兔捣药 | 月白暖黄 · 浅色（中秋，默认） |
+| `jade-rabbit`      | 玉兔捣药 | 月白暖黄 · 浅色（中秋） |
 | `mid-autumn-change` | 嫦娥玉桂 | 青金暖桂 · 深色（中秋） |
 | `lantern-moon`     | 花前月下 | 夜蓝暖橙 · 深色（中秋） |
 | `god-of-wealth`    | 财神到   | 红 · 深色           |
-| `change-benyue`    | 嫦娥奔月 | 银蓝 · 深色         |
+| `change-benyue`    | 嫦娥奔月 | 银蓝 · 深色（默认） |
 | `monkey-king`      | 齐天大圣 | 金橙 · 浅色         |
 | `nezha`            | 哪吒     | 朱红 · 浅色         |
 | `chinese-dragon`   | 中国龙   | 青金 · 深色         |

@@ -5,7 +5,7 @@ export const PRODUCT_ID = "doubao-skin-studio";
 export const PRODUCT_NAME = "Doubao Skin Studio";
 export const STATE_SCHEMA_VERSION = 1;
 export const THEME_SCHEMA_VERSION = 1;
-export const DEFAULT_THEME_ID = "jade-rabbit";
+export const DEFAULT_THEME_ID = "change-benyue";
 export const DEFAULT_CLIENT_ID = "personal";
 export const DOUBAO_CLIENTS = Object.freeze({
   personal: Object.freeze({

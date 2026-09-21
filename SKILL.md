@@ -60,7 +60,7 @@ author: 飞书AI Builder 姜犇
    done
    [ -n "$DOUBAO_SKIN_ROOT" ] || { echo "未找到已安装的 doubao-skin" >&2; exit 1; }
 
-   # 恢复上次用过的皮肤（首次没有历史则用默认 jade-rabbit）
+   # 恢复上次用过的皮肤（首次没有历史则用默认 change-benyue）
    bash "$DOUBAO_SKIN_ROOT/scripts/apply.command"
    # 指定主题时改为：
    # bash "$DOUBAO_SKIN_ROOT/scripts/apply.command" --theme chinese-dragon
@@ -93,7 +93,7 @@ bash "$DOUBAO_SKIN_ROOT/scripts/pause.command"
 ## 主题
 
 - 列出全部：`node src/cli.mjs list`
-- 内置：`jade-rabbit`（默认）`mid-autumn-change` `lantern-moon` `god-of-wealth` `change-benyue` `monkey-king` `nezha` `chinese-dragon` `dunhuang-feitian` `nine-tailed-fox` `panda` `koi-fish` `hua-mulan`
+- 内置：`jade-rabbit` `mid-autumn-change` `lantern-moon` `god-of-wealth` `change-benyue`（默认）`monkey-king` `nezha` `chinese-dragon` `dunhuang-feitian` `nine-tailed-fox` `panda` `koi-fish` `hua-mulan`
 - 用户说心情/角色（如「深色中国龙」）就映射到最接近的 id；拿不准就应用默认，让用户在 🎨 菜单里挑。
 
 ## 红线

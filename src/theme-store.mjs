@@ -7,11 +7,11 @@ const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".webp"]);
 // 内置主题在 🎨 菜单里的展示顺序（listThemes 会据此排序）。
 // 表内主题按此处顺序排；不在表内的（如用户自建主题）排在其后，按名称排序。
 const BUILTIN_ORDER = [
-  "jade-rabbit",      // 玉兔捣药（中秋，默认）
+  "jade-rabbit",      // 玉兔捣药（中秋）
   "mid-autumn-change",// 嫦娥玉桂（中秋）
   "lantern-moon",     // 花前月下（中秋）
   "god-of-wealth",    // 财神到
-  "change-benyue",    // 嫦娥奔月
+  "change-benyue",    // 嫦娥奔月（默认）
   "monkey-king",      // 齐天大圣
   "nezha",            // 哪吒
   "chinese-dragon",   // 中国龙

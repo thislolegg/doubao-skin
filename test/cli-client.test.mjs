@@ -6,8 +6,8 @@ import { runCli } from "../src/cli.mjs";
 const loadedTheme = {
   manifest: {
     schemaVersion: 1,
-    id: "jade-rabbit",
-    name: "玉兔捣药",
+    id: "change-benyue",
+    name: "嫦娥奔月",
     hero: "hero.webp",
   },
   heroPath: "/tmp/hero.webp",
@@ -15,13 +15,13 @@ const loadedTheme = {
 
 function dependencies(overrides = {}) {
   return {
-    listThemes: async () => [{ id: "jade-rabbit", path: "/tmp/theme.json" }],
+    listThemes: async () => [{ id: "change-benyue", path: "/tmp/theme.json" }],
     loadTheme: async () => loadedTheme,
     ...overrides,
   };
 }
 
-test("work client selects its isolated port and renderer", async () => {
+test("work client selects its isolated port, renderer, and default theme", async () => {
   let received;
   await runCli(
     ["apply", "--client", "work"],
@@ -35,6 +35,7 @@ test("work client selects its isolated port and renderer", async () => {
 
   assert.equal(received.port, 9334);
   assert.equal(received.rendererHint, "doubaowork-chat");
+  assert.equal(received.loadedTheme.manifest.id, "change-benyue");
 });
 
 test("personal client remains the default", async () => {
